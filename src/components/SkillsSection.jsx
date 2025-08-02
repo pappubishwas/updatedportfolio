@@ -2,29 +2,62 @@ import React from "react";
 import { cn } from "../lib/utils";
 
 const skills = [
+  // All Languages
+  { name: "JavaScript", level: 90, category: "Programming language" },
+  { name: "Python", level: 85, category: "Programming language" },
+  { name: "Java", level: 75, category: "Programming language" },
+  { name: "C++", level: 95, category: "Programming language" },
+  { name: "C#", level: 85, category: "Programming language" },
+  { name: "C", level: 90, category: "Programming language" },
+  { name: "R", level: 80, category: "Programming language" },
+
+
   // Frontend
   { name: "HTML/CSS", level: 95, category: "frontend" },
-  { name: "JavaScript", level: 90, category: "frontend" },
-  { name: "React", level: 90, category: "frontend" },
   { name: "TypeScript", level: 85, category: "frontend" },
-  { name: "Tailwind CSS", level: 90, category: "frontend" },
+  { name: "React", level: 90, category: "frontend" },
+  { name: "Angular", level: 80, category: "frontend" },
   { name: "Next.js", level: 80, category: "frontend" },
+  { name: "Tailwind CSS", level: 90, category: "frontend" },
+  { name: "Redux/Context API", level: 85, category: "frontend" },
 
   // Backend
-  { name: "Node.js", level: 80, category: "backend" },
-  { name: "Express", level: 75, category: "backend" },
-  { name: "MongoDB", level: 70, category: "backend" },
+  { name: "Node.js", level: 85, category: "backend" },
+  { name: "Express.js", level: 80, category: "backend" },
+  { name: "MongoDB", level: 75, category: "backend" },
   { name: "PostgreSQL", level: 65, category: "backend" },
   { name: "GraphQL", level: 60, category: "backend" },
+  { name: "Firebase", level: 70, category: "backend" },
+  { name: "JWT Auth", level: 80, category: "backend" },
+  { name: "Firebase", level: 80, category: "backend" },
 
-  // Tools
+  // Machine Learning & Data
+  { name: "Pandas", level: 80, category: "ml-data" },
+  { name: "NumPy", level: 75, category: "ml-data" },
+  { name: "Scikit-learn", level: 70, category: "ml-data" },
+  { name: "Matplotlib/Seaborn", level: 70, category: "ml-data" },
+  { name: "Pythorch", level: 70, category: "ml-data" },
+  { name: "Tensorflow", level: 70, category: "ml-data" },
+
+  // Mobile Development
+  { name: "Andorid App", level: 75, category: "mobile" },
+  { name: "XML", level: 75, category: "mobile" },
+
+  // Tools & DevOps
   { name: "Git/GitHub", level: 90, category: "tools" },
   { name: "Docker", level: 70, category: "tools" },
   { name: "Figma", level: 85, category: "tools" },
   { name: "VS Code", level: 95, category: "tools" },
+  { name: "Postman", level: 85, category: "tools" },
+  { name: "Colab", level: 90, category: "tools" },
+  { name: "Kaggle", level: 89, category: "tools" },
+  { name: "Jupyter Notebook", level: 85, category: "tools" },
+  { name: "Vercel/Netlify", level: 80, category: "tools" },
+  { name: "Render/Heroku", level: 70, category: "tools" },
 ];
 
-const categories = ["all", "frontend", "backend", "tools"];
+
+const categories = ["all", "frontend", "backend", "tools","ml-data", "mobile", "Programming language"];
 
 const SkillsSection = () => {
   const [activeCategory, setActiveCategory] = React.useState("all");

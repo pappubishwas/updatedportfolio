@@ -46,7 +46,7 @@ const Navbar = () => {
         </a>
 
         {/* Dekstop nav */}
-        <div className="hidden md:flex space-x-8">
+        <div className="hidden md:flex space-x-8 text-sm font-medium">
           {navItems.map((item, key) => (
             <a href={item.href} key={key} className="text-foreground">
               {" "}
@@ -72,7 +72,7 @@ const Navbar = () => {
               : "opacity-0 pointer-events-none"
           )}
         >
-          <div className="flex flex-col space-y-8 text-xl">
+          <div className="flex flex-col space-y-8 text-xl text-semibold">
             {navItems.map((item, key) => (
               <a
                 href={item.href}

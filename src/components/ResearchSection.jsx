@@ -4,31 +4,20 @@ import React from "react";
 const researchpapers = [
   {
     id: 1,
-    title: "SaaS Landing Page",
-    description: "A beautiful landing page app using React and Tailwind.",
-    image: "/projects/project1.png",
-    tags: ["React", "TailwindCSS", "Supabase"],
-    demoUrl: "#",
+    title: "Automated Clip Mining from Video Data for High-Demand Content",
+    description: "Developed ClipXpert, a system that automates YouTube clip extraction using keyword mining, transcription, and sentiment analysis. Built transcription-based search over video speech, mined frequent keywords and parts of speech for content highlights, and implemented dynamic clip caching. Also performed sentiment analysis on comments to assess audience engagement. Optimized for speed, relevance, and automation in high-demand video content scenarios.",
+    image: "researchpapers/paper1.png",
+    tags: ["Sentiment Analysis", "Automatic Speech Recognition", "NLP", "Generative AI"],
+    demoUrl: "https://ieeexplore.ieee.org/document/10969233",
     githubUrl: "#",
   },
   {
     id: 2,
-    title: "Orbit Analytics Dashboard",
-    description:
-      "Interactive analytics dashboard with data visualization and filtering capabilities.",
-    image: "/projects/project2.png",
-    tags: ["TypeScript", "D3.js", "Next.js"],
-    demoUrl: "#",
-    githubUrl: "#",
-  },
-  {
-    id: 3,
-    title: "E-commerce Platform",
-    description:
-      "Full-featured e-commerce platform with user authentication and payment processing.",
-    image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe"],
-    demoUrl: "#",
+    title: "Urban Audio Classification Using MFCC and 1D-CNN",
+    description: "Developed an urban sound classification system for South Asian audio using MFCCs and a 1D-CNN model. Handled data preprocessing, feature extraction, model selection, and training. Classified sounds like traffic, trains, music, and classroom noise from India and Bangladesh. Trained on both a custom dataset and UrbanSound8K. Achieved high accuracy, showing strong potential for use in noise monitoring, urban planning, and smart city applications.",
+    image: "researchpapers/paper2.png",
+    tags: ["Machine Learning ","Feature Extraction" ,"Data Cleaning", "Deep Learning", "Data Preprocessing"],
+    demoUrl: "https://ieeexplore.ieee.org/document/10829485",
     githubUrl: "#",
   },
 ];
