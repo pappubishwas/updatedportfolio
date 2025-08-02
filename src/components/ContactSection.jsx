@@ -11,27 +11,24 @@ import {
 import React from "react";
 import { cn } from "../lib/utils";
 import { useToast } from "../hooks/use-toast";
-
+import { SiUpwork } from "react-icons/si";
 
 const ContactSection = () => {
+  const { toast } = useToast();
+  const [isSubmitting, setIsSubmitting] = React.useState(false);
 
-    const {toast} = useToast();
-    const [isSubmitting, setIsSubmitting] = React.useState(false);
-
-
-    const handleSubmit=(e)=>{
-        e.preventDefault();
-        setIsSubmitting(true);
-        setTimeout(() => {
-            toast({
-                title: "Message Sent",
-                description: "Thank you for reaching out! I'll get back to you soon.",
-                variant: "success",
-            });
-            setIsSubmitting(false);
-        }, 1500);
-        
-    }
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setTimeout(() => {
+      toast({
+        title: "Message Sent",
+        description: "Thank you for reaching out! I'll get back to you soon.",
+        variant: "success",
+      });
+      setIsSubmitting(false);
+    }, 1500);
+  };
 
   return (
     <section id="contact" className="py-24 px-4 relative bg-secondary/30">
@@ -41,7 +38,8 @@ const ContactSection = () => {
         </h2>
 
         <p className="text-center text-muted-foreground mb-12 max-w-2xl mx-auto">
-          I'm always open to discussing new projects, creative ideas, or collaboration opportunities.
+          I'm always open to discussing new projects, creative ideas, or
+          collaboration opportunities.
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
@@ -85,27 +83,68 @@ const ContactSection = () => {
                 </div>
                 <div>
                   <h4 className="font-medium">Location</h4>
-                  <span className="text-muted-foreground">India, Odisha, Bhubaneswar</span>
+                  <span className="text-muted-foreground">
+                    India, Odisha, Bhubaneswar
+                  </span>
                 </div>
               </div>
             </div>
 
             <div className="pt-8">
-              <h4 className="font-medium mb-4 text-center md:text-left">Connect With Me</h4>
+              <h4 className="font-medium mb-4 text-center md:text-left">
+                Connect With Me
+              </h4>
               <div className="flex space-x-4 justify-center md:justify-start">
-                <a href="#" target="_blank" rel="noopener noreferrer"><Linkedin /></a>
-                <a href="#" target="_blank" rel="noopener noreferrer"><Twitter /></a>
-                <a href="#" target="_blank" rel="noopener noreferrer"><Instagram /></a>
-                <a href="#" target="_blank" rel="noopener noreferrer"><Facebook /></a>
+                <a
+                  href="https://www.linkedin.com/in/pappu-bishwas-tan87/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Linkedin />
+                </a>
+                <a
+                  href="https://www.upwork.com/freelancers/~01f0753e23feaf583f"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <SiUpwork className="w-6 h-6 text-[#6fda44]" />
+                </a>
+                <a
+                  href="https://x.com/OviPappu"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Twitter />
+                </a>
+                <a
+                  href="https://www.instagram.com/pappuovi88/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Instagram />
+                </a>
+                <a
+                  href="https://www.facebook.com/pappuovi8"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <Facebook />
+                </a>
               </div>
             </div>
           </div>
 
-          <div className="bg-card p-8 rounded-lg shadow-xs" onSubmit={handleSubmit}>
+          <div
+            className="bg-card p-8 rounded-lg shadow-xs"
+            onSubmit={handleSubmit}
+          >
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
             <form className="space-y-6">
               <div>
-                <label htmlFor="name" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="name"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Name
                 </label>
                 <input
@@ -118,7 +157,10 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="email" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="email"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Email
                 </label>
                 <input
@@ -131,7 +173,10 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label htmlFor="message" className="block text-sm font-medium mb-2">
+                <label
+                  htmlFor="message"
+                  className="block text-sm font-medium mb-2"
+                >
                   Your Message
                 </label>
                 <textarea
@@ -144,9 +189,11 @@ const ContactSection = () => {
               </div>
 
               <button
-              disabled={isSubmitting}
+                disabled={isSubmitting}
                 type="submit"
-                className={cn("cosmic-button w-full flex items-center justify-center gap-2")}
+                className={cn(
+                  "cosmic-button w-full flex items-center justify-center gap-2"
+                )}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <Send size={16} />
