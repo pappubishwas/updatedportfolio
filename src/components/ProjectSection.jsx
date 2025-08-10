@@ -44,7 +44,7 @@ const projects = [
     title: "Military, Paramilitary, Non-Military Detection",
     description:
       "Deep learning-based classification system to detect and classify images into Military, Paramilitary, and Non-Military categories using YOLO variants and advanced computer vision techniques.",
-    image: "/projects/military_detection.png",
+    image: "/projects/project4.png",
     tags: [
       "Deep Learning",
       "YOLOv5",
