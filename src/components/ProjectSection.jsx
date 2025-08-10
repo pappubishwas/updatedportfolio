@@ -5,16 +5,18 @@ const projects = [
   {
     id: 1,
     title: "Swiggy Clone: Front-End Mini Project Using Angular",
-    description: "A responsive Swiggy clone built with Angular, featuring restaurant listings, search, favorites, and a cart system using localStorage. Utilizes Angular services, routing, reusable components, and MockAPI for mock authentication and order flow",
+    description:
+      "A responsive Swiggy clone built with Angular, featuring restaurant listings, search, favorites, and a cart system using localStorage. Utilizes Angular services, routing, reusable components, and MockAPI for mock authentication and order flow",
     image: "/projects/project1.png",
-    tags: ["Anguler", "TailwindCSS", "TypeScript","Responsive Design"],
+    tags: ["Anguler", "TailwindCSS", "TypeScript", "Responsive Design"],
     demoUrl: "https://swiggy-clone87.netlify.app/",
     githubUrl: "https://github.com/pappubishwas/swiggy-clone",
   },
   {
     id: 2,
     title: "Recipe Blogs Website",
-    description: "A responsive recipe blog built with the MERN stack, featuring advanced search functionality and seamless front-end/back-end integration for a fast and smooth user experience across devices.",
+    description:
+      "A responsive recipe blog built with the MERN stack, featuring advanced search functionality and seamless front-end/back-end integration for a fast and smooth user experience across devices.",
     image: "/projects/project2.png",
     tags: ["JavaScript", "MongoDB", "Node.js", "Express", "React"],
     demoUrl: "https://recipes-blogs-frontend.vercel.app/",
@@ -23,11 +25,37 @@ const projects = [
   {
     id: 3,
     title: "E-commerce Platform",
-    description:"Full-stack e-commerce app using React, Node.js & MongoDB with secure JWT auth, Stripe & Razorpay payments, and a built-in admin panel for product and order management.",
+    description:
+      "Full-stack e-commerce app using React, Node.js & MongoDB with secure JWT auth, Stripe & Razorpay payments, and a built-in admin panel for product and order management.",
     image: "/projects/project3.png",
-    tags: ["React", "Node.js", "Stripe", "MongoDB","Razorpay","JWT Authentication"],
+    tags: [
+      "React",
+      "Node.js",
+      "Stripe",
+      "MongoDB",
+      "Razorpay",
+      "JWT Authentication",
+    ],
     demoUrl: "https://ecommerce-app-frontend-peach.vercel.app/",
     githubUrl: "https://github.com/pappubishwas/Ecommerce-app",
+  },
+  {
+    id: 4,
+    title: "Military, Paramilitary, Non-Military Detection",
+    description:
+      "Deep learning-based classification system to detect and classify images into Military, Paramilitary, and Non-Military categories using YOLO variants and advanced computer vision techniques.",
+    image: "/projects/military_detection.png",
+    tags: [
+      "Deep Learning",
+      "YOLOv5",
+      "YOLOv8",
+      "Computer Vision",
+      "Image Classification",
+      "Python",
+    ],
+    demoUrl: "",
+    githubUrl:
+      "https://github.com/pappubishwas/Military_ParaMilitary_NonMilitary_Detection",
   },
 ];
 
@@ -68,26 +96,28 @@ const ProjectSection = () => {
                     </span>
                   ))}
                 </div>
-              
-              <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
-              <p className="text-muted-foreground text-sm mb-4">
-                {project.description}{" "}
-              </p>
-              <div className="flex justify-between items-center">
-                <div className="flex space-x-3">
-                  <a
-                    href={project.demoUrl}
-                    target="_blank"
-                    className="text-foreground/80 hover:text-primary transition-colors duration-300"
-                  >
-                    <ExternalLink size={20} />
-                  </a>
-                  <a href={project.githubUrl}
-                  target="_blank"
-                  className="text-foreground/80 hover:text-primary transition-colors duration-300">
-                    <Github size={20} />
-                  </a>
-                </div>
+
+                <h3 className="text-xl font-semibold mb-1"> {project.title}</h3>
+                <p className="text-muted-foreground text-sm mb-4">
+                  {project.description}{" "}
+                </p>
+                <div className="flex justify-between items-center">
+                  <div className="flex space-x-3">
+                    <a
+                      href={project.demoUrl}
+                      target="_blank"
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    >
+                      <ExternalLink size={20} />
+                    </a>
+                    <a
+                      href={project.githubUrl}
+                      target="_blank"
+                      className="text-foreground/80 hover:text-primary transition-colors duration-300"
+                    >
+                      <Github size={20} />
+                    </a>
+                  </div>
                 </div>
               </div>
             </div>
@@ -95,9 +125,13 @@ const ProjectSection = () => {
         </div>
 
         <div className="text-center mt-12">
-            <a href="https://github.com/pappubishwas" target="_blank" className="cosmic-button w-fit flex items-center mx-auto gap-2">
-                Check My Github <ArrowRight size={20}/>
-            </a>
+          <a
+            href="https://github.com/pappubishwas"
+            target="_blank"
+            className="cosmic-button w-fit flex items-center mx-auto gap-2"
+          >
+            Check My Github <ArrowRight size={20} />
+          </a>
         </div>
       </div>
     </section>
