@@ -8,6 +8,7 @@ import ResearchSection from "../components/ResearchSection";
 import SkillsSection from "../components/SkillsSection";
 import StarBackground from "../components/StarBackground";
 import ThemeToggle from "../components/ThemeToggle";
+import WorkExperienceSection from "../components/WorkExperience";
 
 export const Home = () => {
   return (
@@ -24,6 +25,7 @@ export const Home = () => {
         <AboutMe/>
         <SkillsSection/>
         <ProjectSection/>
+        <WorkExperienceSection/>
         <ResearchSection/>
         <ContactSection/>
       </main>

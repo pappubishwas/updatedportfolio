@@ -57,6 +57,18 @@ const projects = [
     githubUrl:
       "https://github.com/pappubishwas/Military_ParaMilitary_NonMilitary_Detection",
   },
+  {
+    id: 5,
+    title: "ContentCraftAI SaaS Application (PERN Stack)",
+    description:"Built and deployed a full-stack AI SaaS app (PERN) with secure authentication (Clerk), subscription billing, and Neon serverless PostgreSQL. Features include AI-powered content generators, image editing tools, and resume analyzer. Fully responsive and deployed on Vercel",
+    image: "/projects/project5.png",
+    tags: [
+      "React.js", "Node.js", "Express.js", "PostgreSQL", "Clerk", "Neon", "Vercel"
+    ],
+    demoUrl: "https://content-craft-ai-mu.vercel.app/",
+    githubUrl:
+      "https://github.com/pappubishwas/ContentCraftAI",
+  },
 ];
 
 const ProjectSection = () => {

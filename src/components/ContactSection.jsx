@@ -12,6 +12,7 @@ import React from "react";
 import { cn } from "../lib/utils";
 import { useToast } from "../hooks/use-toast";
 import { SiUpwork } from "react-icons/si";
+import emailjs from "emailjs-com";
 
 const ContactSection = () => {
   const { toast } = useToast();
@@ -20,14 +21,33 @@ const ContactSection = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     setIsSubmitting(true);
-    setTimeout(() => {
-      toast({
-        title: "Message Sent",
-        description: "Thank you for reaching out! I'll get back to you soon.",
-        variant: "success",
-      });
-      setIsSubmitting(false);
-    }, 1500);
+
+    emailjs
+      .sendForm(
+        "your_service_id",   // replace with your EmailJS service ID
+        "your_template_id",  // replace with your EmailJS template ID
+        e.target,            // form element
+        "your_public_key"    // replace with your EmailJS public key
+      )
+      .then(
+        () => {
+          toast({
+            title: "Message Sent ✅",
+            description: "Thanks for reaching out! I'll get back to you soon.",
+            variant: "success",
+          });
+          setIsSubmitting(false);
+          e.target.reset(); // clear form after sending
+        },
+        () => {
+          toast({
+            title: "Error ❌",
+            description: "Something went wrong. Please try again.",
+            variant: "destructive",
+          });
+          setIsSubmitting(false);
+        }
+      );
   };
 
   return (
@@ -43,12 +63,12 @@ const ContactSection = () => {
         </p>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {/* Contact Info */}
           <div className="space-y-8">
             <h3 className="text-2xl font-semibold mb-6">Contact Information</h3>
-
-            <div className="space-y-6 justify-center">
+            <div className="space-y-6">
               <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10 text-primary-foreground">
+                <div className="p-3 rounded-full bg-primary/10">
                   <Mail className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -63,7 +83,7 @@ const ContactSection = () => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10 text-primary-foreground">
+                <div className="p-3 rounded-full bg-primary/10">
                   <Phone className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -78,7 +98,7 @@ const ContactSection = () => {
               </div>
 
               <div className="flex items-start space-x-4">
-                <div className="p-3 rounded-full bg-primary/10 text-primary-foreground">
+                <div className="p-3 rounded-full bg-primary/10">
                   <Map className="h-6 w-6 text-primary" />
                 </div>
                 <div>
@@ -95,56 +115,31 @@ const ContactSection = () => {
                 Connect With Me
               </h4>
               <div className="flex space-x-4 justify-center md:justify-start">
-                <a
-                  href="https://www.linkedin.com/in/pappu-bishwas-tan87/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.linkedin.com/in/pappu-bishwas-tan87/" target="_blank" rel="noopener noreferrer">
                   <Linkedin />
                 </a>
-                <a
-                  href="https://www.upwork.com/freelancers/~01f0753e23feaf583f"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.upwork.com/freelancers/~01f0753e23feaf583f" target="_blank" rel="noopener noreferrer">
                   <SiUpwork className="w-6 h-6 text-[#6fda44]" />
                 </a>
-                <a
-                  href="https://x.com/OviPappu"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://x.com/OviPappu" target="_blank" rel="noopener noreferrer">
                   <Twitter />
                 </a>
-                <a
-                  href="https://www.instagram.com/pappuovi88/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.instagram.com/pappuovi88/" target="_blank" rel="noopener noreferrer">
                   <Instagram />
                 </a>
-                <a
-                  href="https://www.facebook.com/pappuovi8"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
+                <a href="https://www.facebook.com/pappuovi8" target="_blank" rel="noopener noreferrer">
                   <Facebook />
                 </a>
               </div>
             </div>
           </div>
 
-          <div
-            className="bg-card p-8 rounded-lg shadow-xs"
-            onSubmit={handleSubmit}
-          >
+          {/* Contact Form */}
+          <div className="bg-card p-8 rounded-lg shadow-xs">
             <h3 className="text-2xl font-semibold mb-6">Send a Message</h3>
-            <form className="space-y-6">
+            <form className="space-y-6" onSubmit={handleSubmit}>
               <div>
-                <label
-                  htmlFor="name"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="name" className="block text-sm font-medium mb-2">
                   Your Name
                 </label>
                 <input
@@ -157,10 +152,7 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="email"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="email" className="block text-sm font-medium mb-2">
                   Your Email
                 </label>
                 <input
@@ -173,14 +165,10 @@ const ContactSection = () => {
               </div>
 
               <div>
-                <label
-                  htmlFor="message"
-                  className="block text-sm font-medium mb-2"
-                >
+                <label htmlFor="message" className="block text-sm font-medium mb-2">
                   Your Message
                 </label>
                 <textarea
-                  id="message"
                   name="message"
                   required
                   className="w-full px-4 py-3 rounded-md border border-input bg-background focus:outline-none focus:ring-2 focus:ring-primary resize-none"
@@ -191,9 +179,7 @@ const ContactSection = () => {
               <button
                 disabled={isSubmitting}
                 type="submit"
-                className={cn(
-                  "cosmic-button w-full flex items-center justify-center gap-2"
-                )}
+                className={cn("cosmic-button w-full flex items-center justify-center gap-2")}
               >
                 {isSubmitting ? "Sending..." : "Send Message"}
                 <Send size={16} />
